@@ -14,7 +14,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit {
   title = 'crud-app';
 
-  displayedColumns: string[] = ['productName', 'category', 'date', 'freshness', 'price', 'comment'];
+  displayedColumns: string[] = ['productName', 'category', 'date', 'freshness', 'price', 'comment', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
+    }).afterClosed().subscribe(val => {
+      if(val == 'save') {
+        this.getAllProducts();
+      }
     });
   }
 
@@ -44,7 +48,31 @@ export class AppComponent implements OnInit {
       error: () => {
         alert("Error While Fetching the Records")
       }
-    })
+    });
+  }
+
+  editProduct(row : any) {
+    this.dialog.open(DialogComponent, {
+      width: "30%",
+      data: row
+    }).afterClosed().subscribe(val => {
+      if(val == 'update') {
+        this.getAllProducts();
+      }
+    });
+  }
+
+  deleteProduct(id: number) {
+    this.api.deleteProduct(id)
+    .subscribe({
+      next: (res) => {
+        alert("Product Delete Successfully");
+        this.getAllProducts();
+      },
+      error: () => {
+        alert("Error While Deleting the Record");
+      }
+    });
   }
 
   applyFilter(event: Event) {

@@ -4,7 +4,7 @@
       "productName": "Apple",
       "category": "Fruits",
       "freshness": "Brand New",
-      "price": 100,
+      "price": 900,
       "comment": "This is Fresh.\n",
       "date": "2022-05-02T18:30:00.000Z",
       "id": 1
@@ -13,10 +13,19 @@
       "productName": "Banana",
       "category": "Fruits",
       "freshness": "Brand New",
-      "price": 50,
+      "price": 505,
       "comment": "This is mild fresh",
       "date": "2022-05-01T18:30:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "Mouse",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 200,
+      "comment": "This is 1 month used product.",
+      "date": "2022-04-04T18:30:00.000Z",
+      "id": 3
     }
   ],
   "comments": [
