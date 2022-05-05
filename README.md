@@ -30,4 +30,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Extra Adding to the Project
 
-Also Need to download the json-server and run it with the code also to enable the running of the api.
+Download the Node Module.
+Install json server using NPM.
+Then "run json-server --watch db.json"
+IF error of script disable came then run "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
+
+Then Run the angular to run it as Full-Stack.
